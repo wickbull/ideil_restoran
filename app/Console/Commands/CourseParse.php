@@ -38,12 +38,15 @@ class CourseParse extends Command
      */
     public function handle()
     {
-        $url="http://finance.i.ua";
+        $url="https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
         $text = file_get_contents($url); 
-        preg_match('#<span class="value -decrease">.*?</span>#is', $text, $arr);
-        $smth1 = str_replace("<span class=\"value -decrease\">", "", $arr[0]);
-        $smth2 = str_replace("</span>", "", $smth1);
-        $smth3 = str_replace("<span>", "", $smth2);
+        preg_match('#{"ccy":"USD","base_ccy":"UAH","buy":".*?","sale":".*?"}#is', $text, $usd);
+        $usd1 = str_replace("{\"ccy\":\"USD\",\"base_ccy\":\"UAH\",\"buy\":\"", "", $usd[0]);
+        $usd2 = str_replace("\",\"sale\":\"", " : ", $usd1);
+        $usd3 = str_replace("\"}", "", $usd2);
+        $usd_array = explode(" : ", $usd3);
+        $smth3 = ($usd_array[0]+$usd_array[1])/2;
+        
         print_r("\n");
         print_r(" СТАТУС ОБНОВЛЕН! : Курс USD сейчас: ".$smth3."\n");
         print_r("\n");
@@ -53,8 +56,5 @@ class CourseParse extends Command
         $smth = new ParseSmth;
         $smth->fill($smth4);
         $smth->save();
-
-        //->dailyAt('13:00');
-        // echo "OMP_DMG \n ";
     }
 }
