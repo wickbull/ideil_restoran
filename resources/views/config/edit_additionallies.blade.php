@@ -6,12 +6,20 @@
         <div class="col-md-10 col-md-offset-1">
 
             <div class="col-md-12">
+<<<<<<< HEAD
                 <a href="{{ url('/config/add_food') }}" class="btn btn-success btn-lg button_add">@lang('edit_table_food.add_cat_food')</a>
+=======
+                <a href="{{ url('/config/add_food') }}" class="btn btn-success btn-lg button_add">{{ $lang['button_1'] }}</a>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
             </div>
 
             <div class="col-md-12 block">
                 <div class="col-md-12 top">
+<<<<<<< HEAD
                     <center> <b>@lang('edit_table_food.food')</b> </center>
+=======
+                    <center> <b>{{ $lang['status_1'] }}</b> </center>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
                 </div>
 
                 <div class="col-md-12 center_text">
@@ -20,6 +28,7 @@
                             <thead>
                                 <tr>
                                     <th>№</th>
+<<<<<<< HEAD
                                     <th>@lang('edit_table_food.photo')</th>
                                     <th>@lang('edit_table_food.name')</th>
                                     <th>@lang('edit_table_food.weight')</th>
@@ -28,6 +37,16 @@
                                     <th>@lang('edit_table_food.price_usd')</th>
                                     <th>@lang('edit_table_food.edit')</th>
                                     <th>@lang('edit_table_food.delete')</th>
+=======
+                                    <th>{{ $lang['status_2'] }}</th>
+                                    <th>{{ $lang['status_3'] }}</th>
+                                    <th>{{ $lang['status_4'] }}</th>
+                                    <th>{{ $lang['status_5'] }}</th>
+                                    <th>{{ $lang['status_6'] }}</th>
+                                    <th>{{ $lang['status_7'] }}</th>
+                                    <th>{{ $lang['status_8'] }}</th>
+                                    <th>{{ $lang['status_9'] }}</th>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
                                 </tr>
                             </thead>
                             @foreach($additionalls as $key => $additionall)
@@ -55,9 +74,48 @@
                                 </tbody>
                             @endforeach
                         </table>
+<<<<<<< HEAD
+=======
+                    
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
                 </div>
             </div>
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+=======
+@endsection
+
+@section('button_admin')
+    {{ $lang_layout['button_1'] }}
+@endsection
+
+@section('button_basket')
+    {{ $lang_layout['button_2'] }}
+@endsection
+
+@section('button_shop')
+    {{ $lang_layout['button_3'] }}
+@endsection
+
+@section('button_logout')
+    {{ $lang_layout['button_4'] }}
+@endsection
+
+@section('button_login')
+    {{ $lang_layout['button_5'] }}
+@endsection
+
+@section('button_register')
+    {{ $lang_layout['button_6'] }}
+@endsection
+
+@section('button_home')
+    {{ $lang_layout['button_7'] }}
+@endsection
+
+@section('logged')
+    {{ $lang_layout['auth'] }}
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
 @endsection

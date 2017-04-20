@@ -6,6 +6,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
 Route::get('/home', 'HomeController@index');
 // Route::get('/home/edit', 'HomeController@index');
 // Route::get('/home/edit/{id}', 'HomeController@show_food')->name('show_food');
@@ -16,6 +22,10 @@ Route::get('/home/del_food/{id}', 'FoodController@delete_food')->name('delete_fo
 Route::get('/home/order/{id}', 'Baskets@order')->name('go_to_order'); 
 Route::post('/home/order', 'Baskets@store')->name('store_order');
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
 Route::get('/home/show_add/{id}', 'FoodController@show_additionall')->name('show_additionall');
 Route::post('/home/show_add', 'FoodController@edit_additionall')->name('editAdditionall');
 Route::get('/home/edit/{id}', 'FoodController@show_food')->name('show_food');
@@ -38,5 +48,8 @@ Route::post('/config/add_additional', 'Additionallies@store')->name('addAddition
 
 Route::get('/', 'AuditUserLanguage@index');
 Route::get('/{id}', 'AuditUserLanguage@choose')->name('chooseLang');
+<<<<<<< HEAD
 
 Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
+=======
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f

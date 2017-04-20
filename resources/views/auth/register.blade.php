@@ -1,11 +1,19 @@
 @extends('layouts.app')
+<<<<<<< HEAD
+=======
+<a class="btn btn-default btn-xs" style="border-radius: 0; margin-left: 15px; margin-top: 15px;" href="{{ url('/home') }}">Home</a>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="col-md-12 block">
                 <div class="col-md-12 top">
+<<<<<<< HEAD
                     <center> <b>@lang('register.register')</b> </center>
+=======
+                    <center> <b>Register</b> </center>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
                 </div>
 
                 <div class="col-md-12 center_text">
@@ -13,7 +21,11 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+<<<<<<< HEAD
                             <label for="name" class="col-md-4 control-label">@lang('register.name')</label>
+=======
+                            <label for="name" class="col-md-4 control-label">Name</label>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -27,7 +39,11 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+<<<<<<< HEAD
                             <label for="email" class="col-md-4 control-label">@lang('register.mail')</label>
+=======
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
@@ -41,7 +57,11 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+<<<<<<< HEAD
                             <label for="password" class="col-md-4 control-label">@lang('register.pass')</label>
+=======
+                            <label for="password" class="col-md-4 control-label">Password</label>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
@@ -55,7 +75,11 @@
                         </div>
 
                         <div class="form-group">
+<<<<<<< HEAD
                             <label for="password-confirm" class="col-md-4 control-label">@lang('register.confirm_pass')</label>
+=======
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
@@ -65,7 +89,11 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary button_add">
+<<<<<<< HEAD
                                     @lang('register.register')
+=======
+                                    Register
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
                                 </button>
                             </div>
                         </div>

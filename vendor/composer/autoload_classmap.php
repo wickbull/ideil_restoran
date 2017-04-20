@@ -8,13 +8,20 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Additionally' => $baseDir . '/app/Additionally.php',
     'App\\Basket' => $baseDir . '/app/Basket.php',
+<<<<<<< HEAD
     'App\\Category' => $baseDir . '/app/Category.php',
+=======
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
     'App\\Console\\Commands\\CourseParse' => $baseDir . '/app/Console/Commands/CourseParse.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\English' => $baseDir . '/app/English.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Food' => $baseDir . '/app/Food.php',
     'App\\Http\\Controllers\\Additionallies' => $baseDir . '/app/Http/Controllers/Additionallies.php',
+<<<<<<< HEAD
+=======
+    'App\\Http\\Controllers\\AddsFood' => $baseDir . '/app/Http/Controllers/AddsFood.php',
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
     'App\\Http\\Controllers\\AdminController' => $baseDir . '/app/Http/Controllers/AdminController.php',
     'App\\Http\\Controllers\\AuditUserLanguage' => $baseDir . '/app/Http/Controllers/AuditUserLanguage.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -45,7 +52,10 @@ return array(
     'CreateAdditionalliesTable' => $baseDir . '/database/migrations/2017_04_09_132725_create_additionallies_table.php',
     'CreateAdditionallyTable' => $baseDir . '/database/migrations/Неназвана тека/2017_04_07_090627_create_additionally_table.php',
     'CreateBasketsTable' => $baseDir . '/database/migrations/2017_04_14_085557_create_baskets_table.php',
+<<<<<<< HEAD
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2017_04_20_121614_create_categories_table.php',
+=======
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
     'CreateEnglishTable' => $baseDir . '/database/migrations/Неназвана тека/2017_04_07_091531_create_english_table.php',
     'CreateEnglishesTable' => $baseDir . '/database/migrations/2017_04_09_132633_create_englishes_table.php',
     'CreateFoodsTable' => $baseDir . '/database/migrations/2017_04_09_132830_create_foods_table.php',

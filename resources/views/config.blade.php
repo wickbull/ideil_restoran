@@ -6,9 +6,15 @@
         <div class="col-md-12">
 			
             <div class="col-md-2">
+<<<<<<< HEAD
                 <div style="margin-top:5px" ><a href="{{ url('/config/add_food') }}" class="btn btn-success btn-xs">@lang('admin.add_cat_food')</a></div>
                 <div style="margin-top:5px" ><a href="{{ url('config/edit_food') }}" class="btn btn-success btn-xs">@lang('admin.manage_categories')</a></div >
                 <div style="margin-top:5px" ><a href="{{ url('config/edit_additionallies') }}" class="btn btn-success btn-xs">@lang('admin.manage_food')</a></div >
+=======
+                <div style="margin-top:5px" ><a href="{{ url('/config/add_food') }}" class="btn btn-success btn-xs">{{ $lang['button_1'] }}</a></div>
+                <div style="margin-top:5px" ><a href="{{ url('config/edit_food') }}" class="btn btn-success btn-xs">{{ $lang['button_2'] }}</a></div >
+                <div style="margin-top:5px" ><a href="{{ url('config/edit_additionallies') }}" class="btn btn-success btn-xs">{{ $lang['button_3'] }}</a></div >
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
                 
                 
             </div>
@@ -16,7 +22,11 @@
 
 			<div class="col-md-10 block">
 			    <div class="col-md-12 top">
+<<<<<<< HEAD
 			        <center> <b>@lang('admin.order_n')</b> </center>
+=======
+			        <center> <b>{{ $lang['status_1'] }}</b> </center>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
 			    </div>
 
 			    <div class="col-md-12 center_text">
@@ -25,6 +35,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
+<<<<<<< HEAD
                                     <th>@lang('admin.photo')</th>
                                     <th>@lang('admin.category')</th>
                                     <th>@lang('admin.food')</th>
@@ -35,6 +46,18 @@
                                     <th>@lang('admin.price_uah')</th>
                                     <th>@lang('admin.price_usd')</th>
                                     <th>@lang('admin.add')</th>
+=======
+                                    <th>{{ $lang['table_1'] }}</th>
+                                    <th>{{ $lang['table_2'] }}</th>
+                                    <th>{{ $lang['table_3'] }}</th>
+                                    <th>{{ $lang['table_4'] }}</th>
+                                    <th>{{ $lang['table_5'] }}</th>
+                                    <th>{{ $lang['table_6'] }}</th>
+                                    <th>{{ $lang['table_7'] }}</th>
+                                    <th>{{ $lang['table_8'] }}</th>
+                                    <th>{{ $lang['table_9'] }}</th>
+                                    <th>{{ $lang['table_10'] }}</th>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,7 +81,11 @@
                                     </tr>
                                 @empty
                                     <div class="col-md-12">
+<<<<<<< HEAD
                                         <center> <b style="color:#8C000C"><h1>@lang('admin.none')</h1></b> </center>
+=======
+                                        <center> <b style="color:#8C000C"><h1>{{ $lang['status_3'] }}</h1></b> </center>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
                                     </div>
                                 @endforelse
 
@@ -68,7 +95,11 @@
 				</div>
 
 			  	<div class="col-md-12 top_config">
+<<<<<<< HEAD
 			        <center> <b>@lang('admin.order_h')</b> </center>
+=======
+			        <center> <b>{{ $lang['status_2'] }}</b> </center>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
 			    </div>
 
 			    <div class="col-md-12 center_config">
@@ -77,6 +108,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
+<<<<<<< HEAD
                                     <th>@lang('admin.photo')</th>
                                     <th>@lang('admin.category')</th>
                                     <th>@lang('admin.food')</th>
@@ -87,6 +119,18 @@
                                     <th>@lang('admin.price_uah')</th>
                                     <th>@lang('admin.price_usd')</th>
                                     <th>@lang('admin.undo')</th>
+=======
+                                    <th>{{ $lang['table_1'] }}</th>
+                                    <th>{{ $lang['table_2'] }}</th>
+                                    <th>{{ $lang['table_3'] }}</th>
+                                    <th>{{ $lang['table_4'] }}</th>
+                                    <th>{{ $lang['table_5'] }}</th>
+                                    <th>{{ $lang['table_6'] }}</th>
+                                    <th>{{ $lang['table_7'] }}</th>
+                                    <th>{{ $lang['table_8'] }}</th>
+                                    <th>{{ $lang['table_9'] }}</th>
+                                    <th>{{ $lang['table_11'] }}</th>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
                                 </tr>
                             </thead>
                             <tbody>
@@ -119,4 +163,39 @@
         </div>
     </div>
 </div>	
+<<<<<<< HEAD
+=======
+@endsection
+
+@section('button_admin')
+    {{ $lang_layout['button_1'] }}
+@endsection
+
+@section('button_basket')
+    {{ $lang_layout['button_2'] }}
+@endsection
+
+@section('button_shop')
+    {{ $lang_layout['button_3'] }}
+@endsection
+
+@section('button_logout')
+    {{ $lang_layout['button_4'] }}
+@endsection
+
+@section('button_login')
+    {{ $lang_layout['button_5'] }}
+@endsection
+
+@section('button_register')
+    {{ $lang_layout['button_6'] }}
+@endsection
+
+@section('button_home')
+    {{ $lang_layout['button_7'] }}
+@endsection
+
+@section('logged')
+    {{ $lang_layout['auth'] }}
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
 @endsection

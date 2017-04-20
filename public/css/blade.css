@@ -15,8 +15,12 @@ a:link:hover{
 }
 
 html, body {
+<<<<<<< HEAD
     /* background-image: url('/img/restoran.jpg'); */
     background: #111111;
+=======
+    background-image: url('/img/restoran.jpg');
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
     color: #FFFFFF;
     /* 636b6f */
     font-family: 'Raleway', sans-serif;

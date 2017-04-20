@@ -32,8 +32,12 @@
             }
 
             html, body {
+<<<<<<< HEAD
                 /* background-image: url('/img/restoran.jpg'); */
                 background: #111111;
+=======
+                background-image: url('/img/restoran.jpg');
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
                 color: #FFFFFF;
                 /* 636b6f */
                 font-family: 'Raleway', sans-serif;
@@ -136,6 +140,7 @@
                         <div class="top-right links">
                         
                         @if(Auth::user()->admin == 1)
+<<<<<<< HEAD
                             <a href="{{ url('/config') }}">@lang('header.admin')</a>
                         @endif
                         <a href="{{ url('/basket') }}">@lang('header.basket')</a>
@@ -144,6 +149,16 @@
                             onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
                             @lang('header.logout')
+=======
+                            <a href="{{ url('/config') }}">{{ $lang['button_1'] }}</a>
+                        @endif
+                        <a href="{{ url('/basket') }}">{{ $lang['button_2'] }}</a>
+                        <a href="{{ url('/home') }}">{{ $lang['button_3'] }}</a>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                            {{ $lang['button_4'] }}
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -152,12 +167,21 @@
 
                     </div>
                         <div class="top-left links">
+<<<<<<< HEAD
                         @lang('header.logged_text'): <b>{{ Auth::user()->name }}</b>
                     @else
                         <div class="top-right links">
                         <a href="{{ url('/home') }}">@lang('header.delivery')</a>
                         <a href="{{ url('/login') }}">@lang('header.login')</a>
                         <a href="{{ url('/register') }}">@lang('header.register')</a>
+=======
+                        {{ $lang['login_info'] }}: <b>{{ Auth::user()->name }}</b>
+                    @else
+                        <div class="top-right links">
+                        <a href="{{ url('/home') }}">{{ $lang['button_3'] }}</a>
+                        <a href="{{ url('/login') }}">{{ $lang['button_5'] }}</a>
+                        <a href="{{ url('/register') }}">{{ $lang['button_6'] }}</a>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
                     @endif
                 </div>
             @endif
@@ -195,7 +219,11 @@
                     @else
 
                         <div class="col-md-12" >
+<<<<<<< HEAD
                             <h2>@lang('welcome.chose_lang_text') : 
+=======
+                            <h2>{{ $lang['use'] }} 
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
                                 @if( session('language') == 1)
                                     English
                                 @else
