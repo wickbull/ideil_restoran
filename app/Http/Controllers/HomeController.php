@@ -3,22 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Food;
+use App\Category;
+use App\English;
+use App;
 
 class HomeController extends Controller
 {
 
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {   
 
-        $food = Food::paginate(10);
+        $food = Category::paginate(10);
         return view('home', [
-            'foods' => $food]);
+                'foods' => $food,
+            ]);
     }
+
+
+    public function show_food($id)
+    {   
+        $food = Category::where('id', $id)->first();
+        return view('home/edit/', [
+                'food' => $food,
+            ]);
+    }
+
+    
 }

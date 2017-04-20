@@ -15,6 +15,7 @@ class CreateEnglishesTable extends Migration
     {
         Schema::create('englishes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('blade');
             $table->string('element');
             $table->string('word');
             $table->softDeletes();

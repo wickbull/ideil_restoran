@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ParseSmth;
+
 
 class AddsFood extends Controller
 {
@@ -13,7 +15,7 @@ class AddsFood extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
