@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+<<<<<<< HEAD
+=======
+use App\English;
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
 
 class HomeController extends Controller
 {

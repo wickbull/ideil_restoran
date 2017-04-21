@@ -12,6 +12,7 @@ a:link{
 
 a:link:hover{
     text-decoration: none;
+<<<<<<< HEAD
 }
 
 .float_right{
@@ -41,6 +42,17 @@ a:link:hover{
 html, body {
     /* background-image: url('/img/restoran.jpg'); */
     background: #111111;
+=======
+}
+
+html, body {
+<<<<<<< HEAD
+    /* background-image: url('/img/restoran.jpg'); */
+    background: #111111;
+=======
+    background-image: url('/img/restoran.jpg');
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
     color: #FFFFFF;
     /* 636b6f */
     font-family: 'Raleway', sans-serif;

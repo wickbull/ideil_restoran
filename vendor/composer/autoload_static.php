@@ -293,13 +293,27 @@ class ComposerStaticInitc8cbaed6754a9d5162092a977f0cd0e8
     public static $classMap = array (
         'App\\Additionally' => __DIR__ . '/../..' . '/app/Additionally.php',
         'App\\Basket' => __DIR__ . '/../..' . '/app/Basket.php',
+<<<<<<< HEAD
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
+=======
+<<<<<<< HEAD
+        'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
+=======
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
         'App\\Console\\Commands\\CourseParse' => __DIR__ . '/../..' . '/app/Console/Commands/CourseParse.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\English' => __DIR__ . '/../..' . '/app/English.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Food' => __DIR__ . '/../..' . '/app/Food.php',
         'App\\Http\\Controllers\\Additionallies' => __DIR__ . '/../..' . '/app/Http/Controllers/Additionallies.php',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+        'App\\Http\\Controllers\\AddsFood' => __DIR__ . '/../..' . '/app/Http/Controllers/AddsFood.php',
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\AuditUserLanguage' => __DIR__ . '/../..' . '/app/Http/Controllers/AuditUserLanguage.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -330,7 +344,14 @@ class ComposerStaticInitc8cbaed6754a9d5162092a977f0cd0e8
         'CreateAdditionalliesTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_09_132725_create_additionallies_table.php',
         'CreateAdditionallyTable' => __DIR__ . '/../..' . '/database/migrations/Неназвана тека/2017_04_07_090627_create_additionally_table.php',
         'CreateBasketsTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_14_085557_create_baskets_table.php',
+<<<<<<< HEAD
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_20_121614_create_categories_table.php',
+=======
+<<<<<<< HEAD
+        'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_20_121614_create_categories_table.php',
+=======
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
         'CreateEnglishTable' => __DIR__ . '/../..' . '/database/migrations/Неназвана тека/2017_04_07_091531_create_english_table.php',
         'CreateEnglishesTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_09_132633_create_englishes_table.php',
         'CreateFoodsTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_09_132830_create_foods_table.php',
