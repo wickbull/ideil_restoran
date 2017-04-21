@@ -4,44 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use App\Food;
 use Intervention\Image\ImageManagerStatic as Image;
-
+use App\Additionally;
+use App\Category;
+use App\ParseSmth;
+use Validator;
 
 class FoodController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return view('/home/cat');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        if(empty($request)){
-            echo 'Воу воу воу заповни всі поля!';
-            return redirect('config/add_food');
-        } else {
             $array_food = $request->all();
 
             $imageTempName = $request->file->getPathName();
@@ -54,67 +32,145 @@ class FoodController extends Controller
              
             $food = array(
                 'product' => $array_food['product'],
-                'weight' => $array_food['weight'].' '.$array_food['measurement'],
-                'price_uah' => $array_food['price_uah'],
-                'price_usd' => $array_food['price_usd'],
                 'photo' => $image_way, 
             );
 
-            $additionally = new Food;
+            $additionally = new Category;
             $additionally->fill($food);
             $additionally->save();
             return redirect('config/add_food');
-        }
-
-        
-
-
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show()
     {
-        $food = Food::select(['id','product','weight','price_uah','price_usd','photo'])->get();
+
+        $food = Category::select(['id','product','photo'])->get();
         return view('config/edit_food', [
-                'foods' => $food, ]);
+                'foods' => $food,
+                ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function show_additionall($id)
+    {
+
+        $parse_usd = ParseSmth::select(['id','nbu_usd'])->get();
+
+        foreach ($parse_usd as $usd) {
+            $last_usd = $usd->nbu_usd;
+        }
+        $additionall = Additionally::where('id', $id)->first();
+        $food = Category::select(['id','product','photo'])->get();
+        return view('/home/cat/add', [
+                'additionall' => $additionall,
+                'foods' => $food,
+                'nbu_usd' => $last_usd,
+            ]);
+    }
+
+    public function edit_additionall(Request $request){
+        if(!empty($request->name)) Additionally::where('id', $request->id)->update(['name' => $request->name]);
+        if(!empty($request->weight)) Additionally::where('id', $request->id)->update(['weight' => $request->weight]);
+        if(!empty($request->price_uah)) Additionally::where('id', $request->id)->update(['price_uah' => $request->price_uah]);
+        if(!empty($request->price_usd)) Additionally::where('id', $request->id)->update(['price_usd' => $request->price_usd]);
+        if(!empty($request->product)) Additionally::where('id', $request->id)->update(['product' => $request->product]);
+        if(!empty($request->info)) Additionally::where('id', $request->id)->update(['info' => $request->info]);
+        if(!empty($request->file)){
+            $imageTempName = $request->file->getPathName();
+            $nameImage = substr($imageTempName, 5);
+            $image_src = $nameImage.'.jpg';
+            $path_db = '/img/300x200/additionall/';
+            $image = Image::make($request->file)->resize(300, 200)->save('img/300x200/additionall/'.$image_src);
+            Additionally::where('id', $request->id)->update(['photo' => $image_src]);
+        }
+
+        return redirect('/home/show_add/'.$request->id);
+    }
+
+    public function show_food($id)
+    {
+
+        $parse_usd = ParseSmth::select(['id','nbu_usd'])->get();
+
+        foreach ($parse_usd as $usd) {
+            $last_usd = $usd->nbu_usd;
+        }
+
+        $food = Category::where('id', $id)->first();
+        return view('/home/edit', [
+                'nbu_usd' => $last_usd,
+                'food' => $food,
+            ]);
+    }
+
+    public function edit_food(Request $request){
+        if(!empty($request->product)){
+            Category::where('id', $request->id)->update(['product' => $request->product]);
+        }
+        if(!empty($request->file)){
+            $imageTempName = $request->file->getPathName();
+            $nameImage = substr($imageTempName, 5);
+            $image_src = $nameImage.'.jpg';
+            $path_db = '/img/300x200/';
+            $image = Image::make($request->file)->resize(300, 200)->save('img/300x200/'.$image_src);
+            Category::where('id', $request->id)->update(['photo' => $path_db.$image_src]);
+        }
+
+        return redirect('/home/edit/'.$request->id);
+    }
+
+    public function show_additionalls($id, $name)
+    {
+        $categories = Category::select(['id','product'])->get();
+        $additionall = Additionally::where('product', $id)->get();
+        return view('/home/cat', [
+                'additionall' => $additionall,
+                'name' => $name,
+                'id_category' => $id,
+                'categories' => $categories,
+            ]);
+    }
+
+    public function add_to_basket(Request $request)
     {
         // 
-    }
+        // 
+        // 
+        $smth=array(
+                'id_category' => $request->id_category,
+                'name_category' => $request->name,
+                'name_food' => $request->name_food,
+                'price_uah' => $request->price_uah,
+                'price_usd' => $request->price_usd, 
+            );
+        $result = array($request->id_food => $smth);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
+        //dump($result);
+        session()->put('food', $result);
+        $result_session = session('food');
         
+        
+        array_push($smth,$result_session);
+        dump($result_session);
+        
+        
+        
+        //dump(session('food'));
+
+        
+        // dump(session('food'));
+        //return redirect('/home/cat/'.$request->id.'/'.$request->name);
     }
+
+    public function delete_additionall($id)
+    {
+        Additionally::where('id', $id)->delete();
+        return redirect('config/edit_additionallies');
+    }
+
+    public function delete_food($id)
+    {
+        Category::where('id', $id)->delete();
+        return redirect('config/edit_food');
+    }
+
 }

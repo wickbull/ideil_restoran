@@ -22,6 +22,8 @@ class CreateAdditionalliesTable extends Migration
             $table->string('price_usd');
             $table->string('info');
             $table->string('photo');
+            $table->string('path300х200');
+            $table->string('path700х400');
             $table->softDeletes();
             $table->timestamps();
         });

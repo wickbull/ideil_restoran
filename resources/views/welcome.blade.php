@@ -32,7 +32,8 @@
             }
 
             html, body {
-                background-image: url('/img/restoran.jpg');
+                /* background-image: url('/img/restoran.jpg'); */
+                background: #111111;
                 color: #FFFFFF;
                 /* 636b6f */
                 font-family: 'Raleway', sans-serif;
@@ -133,38 +134,46 @@
                 
                     @if (Auth::check())
                         <div class="top-right links">
-                            @if($admin == 1)
-                                <a href="{{ url('/home') }}">admin</a>
-                            @endif
-                            <a href="{{ url('/home') }}">home</a>
-                            <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </div>
+                        
+                        @if(Auth::user()->admin == 1)
+                            <a href="{{ url('/config') }}">@lang('header.admin')</a>
+                        @endif
+                        <a href="{{ url('/basket') }}">@lang('header.basket')</a>
+                        <a href="{{ url('/home') }}">@lang('header.delivery')</a>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                            @lang('header.logout')
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+
+                    </div>
                         <div class="top-left links">
-                        You logged in: <b>{{ Auth::user()->name }}</b>
+                        @lang('header.logged_text'): <b>{{ Auth::user()->name }}</b>
                     @else
                         <div class="top-right links">
-                        <a href="{{ url('/home') }}">home</a>
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <a href="{{ url('/basket') }}">@lang('header.basket')</a>
+                        <a href="{{ url('/home') }}">@lang('header.delivery')</a>
+                        <a href="{{ url('/login') }}">@lang('header.login')</a>
+                        <a href="{{ url('/register') }}">@lang('header.register')</a>
                     @endif
                 </div>
             @endif
 
             <div class="content">
+                
+
+                
                  
                 <div class="col-md-12">
-                    @if(empty(session('language')))
+                    @if(empty(session('applocale')))
                         <div class="col-md-12" >
                             <h2>Choose your language / Виберіть свою мову</h2>
                         </div>
-                        @if($admin != 1)
+                        
                             @foreach($languages as $language)
                                 <div class="col-md-6">
                                     <h2>
@@ -184,55 +193,38 @@
                                 </div>
                             @endforeach
 
-                        @else
-                            @foreach($languages as $language)
-                                <div class="col-md-4">
-                                    <h2>
-                                        <center>
-                                            <div class="img_lang">
-                                                <center>
-                                                    <b>
-                                                        {{ $language->lang }}
-                                                    </b>
-                                                </center>
-                                                <a href="{{ route('chooseLang',['id' => $language->category]) }}">
-                                                    <img src="{{ asset($language->photo) }}" alt="{{ $language->lang }}">
-                                                </a>   
-                                            </div>
-                                        </center>
-                                    </h2>
-                                </div>
-                            @endforeach
-                            <div class="col-md-4">
-                                <h2>
-                                    <center>
-                                        <div class="img_lang">
-                                            <center>
-                                                <b>
-                                                    Додати мову
-                                                </b>
-                                            </center>
-                                            <div class="add_lang">
-                                                <a href="">
-                                                    <center>+</center>
-                                                </a>
-                                            </div>  
-                                        </div>
-                                    </center>
-                                </h2>
-                            </div>
-                        @endif
                     @else
+
                         <div class="col-md-12" >
-                            <h2>Вибрана мова 
-                                @if( session('language') == 1)
+                            <h2>@lang('welcome.chose_lang_text') : 
+                                @if( session('applocale') == 'en')
                                     English
                                 @else
                                     Українська
                                 @endif
                             </h2>
                         </div>
+                        
+                        @foreach($languages as $language)
+                            <div class="col-md-6">
+                                <h2>
+                                    <center>
+                                        <div class="img_lang">
+                                            <center>
+                                                <b>
+                                                    {{ $language->lang }}
+                                                </b>
+                                            </center>
+                                            <a href="{{ route('chooseLang',['id' => $language->category]) }}">
+                                                <img src="{{ asset($language->photo) }}" alt="{{ $language->lang }}">
+                                            </a>   
+                                        </div>
+                                    </center>
+                                </h2>
+                            </div>
+                        @endforeach
                     @endif
+
                 </div>
             </div>
         </div>

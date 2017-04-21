@@ -12,11 +12,35 @@ a:link{
 
 a:link:hover{
     text-decoration: none;
-    color: rgb(102,0,7);
+}
+
+.float_right{
+    float: right;  
+}
+
+.float_left{
+    border-radius: 0;
+    margin-bottom: 2px;
+}
+
+.left_col{
+    /* background: #F15353 */
+}
+.right_col{
+    margin-bottom: 5px;
+}
+
+.div_block{
+    margin: 1px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: rgba(135,135,135,0.4);
+    /* background: #AAFF72 */
 }
 
 html, body {
-    background-image: url('/img/restoran.jpg');
+    /* background-image: url('/img/restoran.jpg'); */
+    background: #111111;
     color: #FFFFFF;
     /* 636b6f */
     font-family: 'Raleway', sans-serif;
@@ -24,6 +48,10 @@ html, body {
     height: 100vh;
     margin: 0;
 
+}
+
+.mg_top{
+    margin-top: 15px;
 }
 
 .block{
@@ -53,6 +81,12 @@ html, body {
 	background: rgba(34,85,85,0.5);
 }
 
+.center_config{
+    word-wrap: break-word;
+    padding-top: 15px;
+    background: rgba(0,0,0,0.5);
+}
+
 .center img{
 	margin-left: -5.2%;
 	margin-right: 0;
@@ -65,6 +99,14 @@ html, body {
 	padding-bottom: 10px;
 	border-radius: 0 0 5px 5px;
 	background: rgba(34,85,85,0.5);
+}
+
+.top_config{
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px 5px 0 0;
+    background: rgba(0,0,0,0.7);
 }
 
 .button_add{
