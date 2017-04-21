@@ -13,22 +13,14 @@ use Illuminate\Support\Facades\Session;
 
 class Language
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
+
     public function handle($request, Closure $next)
     {
         if (Session::has('applocale') AND array_key_exists(session('applocale'), Config::get('languages'))) {
             App::setLocale(session('applocale'));
         }
-        else { 
-
+        else { // This is optional as Laravel will automatically set the fallback language if there is none specified
             App::setLocale(Config::get('app.fallback_locale'));
-            
         }
         return $next($request);
     }
