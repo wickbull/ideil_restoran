@@ -1,0 +1,12 @@
+CLASS ( ADD PARSING NBU USD )
+
+1 -> open terminal
+2 -> cd /--blablabla--/homestead/
+3 -> vagrant up
+4 -> vagrant ssh
+5 -> cd /home/www/blabla-proj
+6 -> artisan parse:start
+	        ↓
+******LISTING******
+ СТАТУС ОБНОВЛЕН! : Курс USD сейчас: 0.4810
+*******************

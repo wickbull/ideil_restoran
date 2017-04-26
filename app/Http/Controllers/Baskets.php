@@ -7,6 +7,10 @@ use App\Additionally;
 use App\Basket;
 use App\Category;
 use App\User;
+<<<<<<< HEAD
+=======
+use App\English;
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
 use Auth;
 use Mail;
 
@@ -14,9 +18,34 @@ class Baskets extends Controller
 {
     public function index()
     {
+<<<<<<< HEAD
         
         // dump(session('photo'));
+=======
+<<<<<<< HEAD
+        // $id_user = Auth::user()->id;
+
+        // $gets = Basket::where('id_user', $id_user)->get();
+        $gets = '1';
+        $gets_history = '21';
+        //dump(session());
+        //dump(session());
+        // $gets_history = Basket::where('id_user', $id_user)->onlyTrashed()->get();
+
+>>>>>>> 433a25734d223e4a3f7686f5ff60a013364032ce
         return view('basket');
+=======
+        $id_user = Auth::user()->id;
+
+        $gets = Basket::where('id_user', $id_user)->get();
+
+        $gets_history = Basket::where('id_user', $id_user)->onlyTrashed()->get();
+
+        return view('basket',[
+                'gets' => $gets,
+                'gets_history' => $gets_history,
+            ]);
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
     }
 
     public function index_basket()
@@ -61,6 +90,10 @@ class Baskets extends Controller
                 'price_uah' => $request->price_uah,
                 'price_usd' => $request->price_usd,
             );
+<<<<<<< HEAD
+=======
+        dump($basket_arr);
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
 
         $user = User::findOrFail($request->id_user);
         

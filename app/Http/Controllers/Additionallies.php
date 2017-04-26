@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Category;
+<<<<<<< HEAD
+=======
+use App\English;
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
 use App\ParseSmth;
 use App\Additionally;
 

@@ -11,7 +11,18 @@
 		  	document.getElementById('value_uah').value = money_uah;
 		  	document.getElementById('value_usd').value = money_usd;
 		  	console.log(money_uah);
+<<<<<<< HEAD
 		}
+=======
+<<<<<<< HEAD
+		}
+=======
+		  	
+
+		}
+
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
 	</script>
 @endsection
 

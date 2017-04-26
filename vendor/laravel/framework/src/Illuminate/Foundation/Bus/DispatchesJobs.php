@@ -25,7 +25,14 @@ trait DispatchesJobs
      */
     public function dispatchNow($job)
     {
+<<<<<<< HEAD
         App::setLocale(session('language'));
+=======
+<<<<<<< HEAD
+        App::setLocale(session('language'));
+=======
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
         return app(Dispatcher::class)->dispatchNow($job);
     }
 }

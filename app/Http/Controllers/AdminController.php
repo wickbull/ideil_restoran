@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Basket;
 use App\User;
+<<<<<<< HEAD
+=======
+use App\English;
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
 use App\SoftDeletes;
 use Mail;
 

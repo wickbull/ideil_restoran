@@ -25,9 +25,23 @@
 
         function checkProduct() {
             var product = $('#product').val();
+<<<<<<< HEAD
             var file = $('#file').val();
              
             if(product.length != 0 && file.length != 0) {
+=======
+<<<<<<< HEAD
+            var file = $('#file').val();
+             
+            if(product.length != 0 && file.length != 0) {
+=======
+            var weight = $('#weight').val();
+            var price_uah = $('#price_uah').val();
+            var file = $('#file').val();
+             
+            if(product.length != 0 && weight.length != 0  && price_uah.length != 0  && file.length != 0) {
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
                 $('#submit').removeAttr('disabled');
             } else {
                 $('#submit').attr('disabled', 'disabled');
@@ -89,6 +103,7 @@
                     <div class="top-right links">
                         
                         @if(Auth::user()->admin == 1)
+<<<<<<< HEAD
                             <a href="{{ url('/config') }}">@lang('header.admin')</a>
                         @endif
                         <a href="{{ url('/basket') }}">@lang('header.basket')</a>
@@ -97,6 +112,27 @@
                             onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
                             @lang('header.logout')
+=======
+<<<<<<< HEAD
+                            <a href="{{ url('/config') }}">@lang('header.admin')</a>
+                        @endif
+                        <a href="{{ url('/basket') }}">@lang('header.basket')</a>
+                        <a href="{{ url('/home') }}">@lang('header.delivery')</a>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                            @lang('header.logout')
+=======
+                            <a href="{{ url('/config') }}">@yield('button_admin')</a>
+                        @endif
+                        <a href="{{ url('/basket') }}">@yield('button_basket')</a>
+                        <a href="{{ url('/home') }}">@yield('button_shop')</a>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                            @yield('button_logout')
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -106,11 +142,48 @@
                     </div>
                     
                     <div class="top-left links">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
                     <a href="/">@lang('header.home')</a>
                     @lang('header.logged_text'): <b>{{ Auth::user()->name }}</b>
                 @else
                     <div class="top-left links">
                         <a href="/">@lang('header.home')</a>
+<<<<<<< HEAD
+=======
+                    </div>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            {{ Config::get('languages')[App::getLocale()] }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach (Config::get('languages') as $lang => $language)
+                                
+                                    <li>
+                                        <a href="{{ route('lang.switch', $lang) }}">{{$language}}</a>
+                                    </li>
+                                
+                            @endforeach
+                        </ul>
+                    </li>
+                    
+                    <div class="top-right links">
+
+                    
+
+                    <a href="{{ url('/home') }}">@lang('header.delivery')</a>
+                    <a href="{{ url('/login') }}">@lang('header.login')</a>
+                    <a href="{{ url('/register') }}">@lang('header.register')</a>
+=======
+                    <a href="/">@yield('button_home')</a>
+                    @yield('logged'): <b>{{ Auth::user()->name }}</b>
+                @else
+                    <div class="top-left links">
+                        <a href="/">@yield('button_home')</a>
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
                     </div>
 
                     <li class="dropdown">
@@ -129,12 +202,19 @@
                     </li>
                     
                     <div class="top-right links">
+<<<<<<< HEAD
 
                     
                     <a href="{{ url('/basket') }}">@lang('header.basket')</a>
                     <a href="{{ url('/home') }}">@lang('header.delivery')</a>
                     <a href="{{ url('/login') }}">@lang('header.login')</a>
                     <a href="{{ url('/register') }}">@lang('header.register')</a>
+=======
+                    <a href="{{ url('/home') }}">@yield('button_shop')</a>
+                    <a href="{{ url('/login') }}">@yield('button_login')</a>
+                    <a href="{{ url('/register') }}">@yield('button_register')</a>
+>>>>>>> 3840b407fbc3dfc6166d8209ae645b1a57f8128f
+>>>>>>> 86f0a91b020a5f54aba1ac82ea4533c72a093cfe
                 @endif
             </div>
         @endif
