@@ -120,6 +120,8 @@ class FoodController extends Controller
 
     public function show_additionalls($id, $name)
     {
+        dump(session()->all());
+        if(session('food') == NULL) session()->put('food', '1' );
         $categories = Category::select(['id','product'])->get();
         $additionall = Additionally::where('product', $id)->get();
         return view('/home/cat', [
@@ -132,33 +134,53 @@ class FoodController extends Controller
 
     public function add_to_basket(Request $request)
     {
-        // 
-        // 
-        // 
-        $smth=array(
-                'id_category' => $request->id_category,
-                'name_category' => $request->name,
+        dump($request->all());
+        dump(session()->all());
+
+        if(($request->id_food != NULL) and (session('food.'.$request->id_food) != NULL))
+        {
+            if(session('food.'.$request->id_food) != NULL)
+            {   
+                if($request->inc == '+'){
+                    $inc = session('food.'.$request->id_food);
+                    ++$inc;
+                    session()->put('food.'.$request->id_food,  $inc );
+                }
+                if(($request->dec == '-')){
+                    $inc = session('food.'.$request->id_food);
+                    --$inc;
+                    session()->put('food.'.$request->id_food,  $inc );
+                    if($inc == '1'){
+                        session()->forget('food.'.$request->id_food);
+                    }
+                }
+            }
+        } else {
+
+            session()->put('food.'.$request->id_food, '1' );
+        } 
+        session()->put('id.'.$request->id_food, $request->id_food );
+        session()->put('photo.'.$request->id_food, $request->photo );
+        session()->put('name_food.'.$request->id_food, $request->name_food );
+        session()->put('name_cat.'.$request->id_food, $request->name_cat );
+        session()->put('p_uah.'.$request->id_food, $request->price_uah );
+        session()->put('p_usd.'.$request->id_food, $request->price_usd );
+
+
+        //dump(session('count'));
+
+        /*$basket = array(
+                'cat' => $request->id_category,
+                'food' => $request->id_food,
+                'name_cat' => $request->name_cat,
                 'name_food' => $request->name_food,
-                'price_uah' => $request->price_uah,
-                'price_usd' => $request->price_usd, 
-            );
-        $result = array($request->id_food => $smth);
+                'p_uah' => $request->price_uah,
+                'p_usd' => $request->price_usd,
+                'photo' => $request->photo,
+                'count' => $request->count,
+            );*/
+        return redirect('home/cat/'.$request->id_category.'/'.$request->name_cat);
 
-        //dump($result);
-        session()->put('food', $result);
-        $result_session = session('food');
-        
-        
-        array_push($smth,$result_session);
-        dump($result_session);
-        
-        
-        
-        //dump(session('food'));
-
-        
-        // dump(session('food'));
-        //return redirect('/home/cat/'.$request->id.'/'.$request->name);
     }
 
     public function delete_additionall($id)

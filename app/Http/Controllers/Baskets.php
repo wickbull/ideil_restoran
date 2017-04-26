@@ -14,22 +14,35 @@ class Baskets extends Controller
 {
     public function index()
     {
-        // $id_user = Auth::user()->id;
-
-        // $gets = Basket::where('id_user', $id_user)->get();
-        $gets = '1';
-        $gets_history = '21';
-        //dump(session());
-        //dump(session());
-        // $gets_history = Basket::where('id_user', $id_user)->onlyTrashed()->get();
-
+        
+        // dump(session('photo'));
         return view('basket');
     }
 
-    public function index_delete($id)
+    public function index_basket()
     {
-        Basket::where('id', $id)->forceDelete();
-        return redirect('basket');
+        return view('basket/add');
+    }
+
+
+    public function index_do(Request $request)
+    {
+        dump($request->all());
+        // dump(session()->all());
+        // dump(session('food'));
+        // foreach (session('food') as $key => $value) {
+        //     dump($value);
+        //     $arr[$key] = $value;
+        // }
+        // foreach (session('id') as $id => $val) {
+        //     $arrays[] = $val;
+        // }
+        // $id = implode(':',$arrays);
+        // dump($id);
+
+        // $zers = explode(':',$smth);
+        // dump($zers);
+        //return view('basket');
     }
 
     public function store(Request $request)

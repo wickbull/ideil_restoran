@@ -19,6 +19,7 @@ return [
     'order' => 'Order',
     'edit' => 'Edit',
     'price' => 'Price',
+    'add' => 'Add to basket',
     'categories' => 'Categories',
 
 ];

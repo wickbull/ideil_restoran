@@ -26,7 +26,8 @@ Route::get('/config', 'AdminController@index');
 Route::get('/config/{id}/{variant}', 'AdminController@check')->name('check');
 
 Route::get('/basket', 'Baskets@index');
-Route::get('/basket/{id}', 'Baskets@index_delete')->name('index_delete');
+Route::get('/basket/add', 'Baskets@index_basket');
+Route::post('/basket/add', 'Baskets@index_do')->name('index_do');
 
 Route::get('/config/add_food', 'Additionallies@index');
 Route::get('/config/edit_food', 'FoodController@show');
